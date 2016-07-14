@@ -10,9 +10,10 @@ import {CargoFilterPipe} from './cargo-filter.pipe'
 export class CargoComponent{
    
     listFilter: string;
+    listFilter1: string;
    
     cargos: any = [{
-            "index":0,
+            "index":0, 
             "quantity": 500,
             "package": "Lumber",
             "commodity": "Something",
@@ -20,7 +21,8 @@ export class CargoComponent{
             "weight": [
                 200,
                 300,
-                400
+                400,
+                500
             ],
             "volume": [
                 500,

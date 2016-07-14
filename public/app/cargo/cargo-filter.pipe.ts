@@ -1,7 +1,7 @@
 import {PipeTransform, Pipe} from 'angular2/core'
 
 @Pipe({
-  name: 'cargoFilter'  
+  name: 'cargoFilter1'  
 })
 
 export class CargoFilterPipe implements PipeTransform {
