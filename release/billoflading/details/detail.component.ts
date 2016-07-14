@@ -7,8 +7,7 @@ import {Component} from 'angular2/core'
 
 export class BillOfLadingDetailComponent{
      
-      billOfLadingNumber1: Number;
-     billOfLadingNumber: Number;
+     billOfLadingNumber2: Number;
      masterBillOfLadingNumber: Number;
      billOfLadingNumberImport: Number;
      warfCode: Number;
@@ -18,10 +17,8 @@ export class BillOfLadingDetailComponent{
      discharge: String; 
      consigneePort: String; 
      shipper: String; 
-     notify: String; 
-     notify2: String;
-     notify3: String;
-      notify4: String;
+     notify: String;
+     
      showMaximizeIcon1: Boolean = false;
      showCalapseIcon: Boolean = true;
      showWidgetBody: Boolean = true;

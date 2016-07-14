@@ -7,5 +7,5 @@ export interface IProduct{
     price:number;
     description:string;
     starRating:number;
-    imageUrl:string; 
+    imageUrl:string;
 }

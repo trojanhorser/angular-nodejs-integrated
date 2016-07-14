@@ -9,6 +9,7 @@ import {WelcomeComponent} from './home/welcome.component'
 import {ProductDetailComponent} from './products/product-detail.component' 
 import {BillOfLadingComponent} from './billoflading/main/main.component'
 
+
 @Component({
     selector: 'pm-app',
     template: 

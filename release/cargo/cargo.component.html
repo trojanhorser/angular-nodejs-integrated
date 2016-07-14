@@ -1,0 +1,244 @@
+<!--
+<div role="content">
+    <div class="widget-body">
+
+        <table class="table table-bordered table-lg mt-lg mb-0">
+            <thead>
+                <tr>
+                    <th class="text-align-center"></th>
+                    <th class="text-align-center">Quantity</th>
+                    <th class="text-align-center">Package</th>
+                    <th class="text-align-center">Commodity</th>
+                    <th class="text-align-center">HS Code</th>
+                    <th class="text-align-center">Weight</th>
+                    <th class="text-align-center">Volume</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="#cargo of cargos | cargoFilter:listFilter">
+                <tr>
+                    <td>
+                        <span *ngIf="!cargo.showDetails" (click)="toggleDetails(cargo.index)" class="glyphicon glyphicon-plus"></span>
+                        <span *ngIf="cargo.showDetails" (click)="toggleDetails(cargo.index)"  class="glyphicon glyphicon-minus"></span>
+                    </td>
+                    <td>{{cargo.quantity}}</td>
+                    <td class="text-align-right">{{cargo.package}}</td>
+                    <td class="text-align-right">{{cargo.commodity}}</td>
+                    <td class="text-align-right">{{cargo.hsCode}}</td>
+                    <td class="text-align-right">{{cargo.weight}}</td>
+                    <td class="text-align-right">{{cargo.volume}}</td>
+
+                </tr>
+                <tr *ngIf="cargo.showDetails">
+
+                    <td colspan="7">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputEmail2">Marks And Numbers</label>
+                                <input class="form-control ng-pristine ng-valid ng-touched" id="exampleInputEmail2" placeholder="" type="email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputEmail2">Description</label>
+                                <input class="form-control ng-pristine ng-valid ng-touched" id="exampleInputEmail2" placeholder="" type="email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="exampleInputEmail2">Associated Containers</label>
+                                <input class="form-control ng-pristine ng-valid ng-touched" id="exampleInputEmail2" placeholder="" type="email">
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+-->
+
+
+
+
+<div role="content">
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <div id="dt_basic_wrapper" class="dataTables_wrapper form-inline no-footer">
+            <div class="dt-toolbar">
+                <div class="col-xs-12 col-sm-6">
+                    <div id="dt_basic_filter" class="dataTables_filter"><label><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span> 
+                     <input type="search" [(ngModel)]='listFilter' class="form-control col-sm-8" id="search-input">
+                    </label></div>
+                </div>
+                <div class="col-sm-6 col-xs-12 hidden-xs">
+                    <div class="dataTables_length" id="dt_basic_length"><label><select name="dt_basic_length" aria-controls="dt_basic" class="form-control"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div>
+                </div>
+            </div>
+            <table id="dt_basic" class="table table-striped table-bordered table-hover dataTable no-footer" width="100%"
+                role="grid" aria-describedby="dt_basic_info" style="width: 100%;">
+                <thead>
+                    <tr role="row">
+                        
+                        
+                         <th data-hide="phone" class="sorting_asc" tabindex="0" aria-controls="dt_basic" rowspan="1" colspan="1"
+                            aria-sort="ascending" aria-label="ID: activate to sort column descending" style="width: 60px;">Quantity</th>
+                        <th data-class="expand" class="expand sorting" tabindex="0" aria-controls="dt_basic" rowspan="1"
+                            colspan="1" aria-label=" Name: activate to sort column ascending" style="width: 139px;">
+                            <i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Package</th>
+                        <th data-hide="phone"
+                            class="sorting" tabindex="0" aria-controls="dt_basic" rowspan="1" colspan="1" aria-label=" Phone: activate to sort column ascending"
+                            style="width: 206px;"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Commodity</th>
+                        <th class="sorting"
+                            tabindex="0" aria-controls="dt_basic" rowspan="1" colspan="1" aria-label="Company: activate to sort column ascending"
+                            style="width: 500px;">HS Code</th>
+                        <th data-hide="phone,tablet" class="sorting" tabindex="0" aria-controls="dt_basic" rowspan="1"
+                            colspan="1" aria-label=" Zip: activate to sort column ascending" style="width: 143px;"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Weight</th>
+                        <th data-hide="phone,tablet"
+                            class="sorting" tabindex="0" aria-controls="dt_basic" rowspan="1" colspan="1" aria-label="City: activate to sort column ascending"
+                            style="width: 285px;">Volume</th>
+                    </tr>
+                </thead>
+                 <tbody *ngFor="#cargo of cargos | cargoFilter:listFilter">
+                <tr>
+                    <td>
+                        <span *ngIf="!cargo.showDetails" (click)="toggleDetails(cargo.index)" class="glyphicon glyphicon-plus"></span>
+                        <span *ngIf="cargo.showDetails" (click)="toggleDetails(cargo.index)"  class="glyphicon glyphicon-minus"></span>
+                    </td>
+                    <td>{{cargo.quantity}}</td>
+                    <td class="text-align-right">{{cargo.package}}</td>
+                    <td class="text-align-right">{{cargo.commodity}}</td>
+                    <td class="text-align-right">{{cargo.hsCode}}</td>
+                    <td class="text-align-right">{{cargo.weight}}</td>
+                    <td class="text-align-right">{{cargo.volume}}</td>
+
+                </tr>
+                <tr *ngIf="cargo.showDetails">
+
+                    <td colspan="7">
+                      
+                       <div class="widget-body no-padding">
+
+						<form action="" class="smart-form">							
+						
+							<fieldset>
+
+								<div class="row">
+									<section class="col col-6">
+                                         <label>Marks And Numbers</label>
+										<label class="input">
+											<input type="text" placeholder="2/12">
+										</label>
+									</section>
+									<section class="col col-6">
+                                        
+                                         <label>Descritption</label>
+										<label class="input">
+                                           
+											<input type="text" placeholder="4/12">
+										</label>
+									</section>
+                                    
+                                    
+									
+								</div>
+                                
+                                <div class="row">
+                                     <section class="col col-10">
+										  <label for="exampleInputEmail2">Associated Containers</label>
+                                      
+                                        <label class="input">
+											
+											<input type="text" placeholder="6/12">
+										</label>
+									</section>
+                                </div>
+                                
+							</fieldset>
+
+							<footer>
+								<button type="submit" class="btn btn-primary">
+									Submit
+								</button>
+								<button type="button" class="btn btn-default" onclick="window.history.back();">
+									Back
+								</button>
+							</footer>
+						</form>
+
+					</div>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+         
+        </div>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -19,7 +19,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['browser-sync'], function () {
 });
 
-gulp.task('browser-sync', ['nodemon'], function() {
+gulp.task('browser-sync',['nodemon'], function() {
 	browserSync.init(null, {
 		proxy: "http://localhost:3000",
         files: ["public/**/*.*"],
@@ -27,7 +27,8 @@ gulp.task('browser-sync', ['nodemon'], function() {
         port: 7000,
 	});
 });
-gulp.task('nodemon', function (cb) {
+
+gulp.task('nodemon',function (cb) {
 	
 	var started = false;
 	
@@ -39,4 +40,15 @@ gulp.task('nodemon', function (cb) {
 			started = true; 
 		} 
 	});
+});
+
+gulp.task('typescript-compile', function() {
+    var tsResult = tsProject.src() // instead of gulp.src(...) 
+        .pipe(tsc(tsProject));
+ 
+    return tsResult.js.pipe(gulp.dest('release'));
+});
+
+gulp.task('watch', ['typescript-compile'], function() {
+    gulp.watch('"public/**/*.ts', ['typescript-compile']);
 });

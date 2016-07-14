@@ -1,0 +1,241 @@
+<!--
+<section class="widget">
+    <header>
+        <div class="summary" *ngIf="showMaximizeIcon">
+            <div class="row  top-buffer">
+
+                <div class="col-md-4" *ngIf="billOfLadingNumber">
+                    <h6  >Bill Of Lading Number <span class="label label-default">{{billOfLadingNumber}}</span></h6>
+
+                </div>
+                <div class="col-md-4" *ngIf="masterBillOfLadingNumber">
+                    <h6>Mater Bill Of Lading Number 
+                         <span class="label label-default">{{masterBillOfLadingNumber}}</span>
+                    </h6>
+                </div>
+                <div class="col-md-4" *ngIf="billOfLadingNumberImport">
+                    <h6>Bill Of Lading Number Import
+                                                <span class="label label-default">{{billOfLadingNumberImport}}</span>
+                                            </h6>
+                </div>
+            </div>
+            <div class="row  top-buffer">
+                
+                <div *ngIf="warfCode" class="col-md-4">
+                    <h6>Wharf Code
+                                            <span class="label label-default">{{warfCode}}</span>
+                                        </h6>
+                </div>
+                <div  *ngIf="originPort" class="col-md-4">
+                    <h6>Origin Port
+                    <span class="label label-default">{{originPort}}</span>
+                    </h6>
+                </div>
+                <div  *ngIf="destination" class="col-md-4">
+                    <h6>Destination
+                                            <span class="label label-default">{{destination}}</span>
+                                        </h6>
+                </div>
+            </div>
+            <div class="row  top-buffer">
+
+            
+                <div  *ngIf="loadingPort" class="col-md-4">
+                    <h6>Loading Port
+                                            <span class="label label-default">{{loadingPort}}</span>
+                                        </h6>
+                </div>
+                <div  *ngIf="discharge" class="col-md-4">
+                    <h6>Discharge
+                                            <span class="label label-default">{{discharge}}</span>
+                                        </h6>
+                </div>
+                <div *ngIf="consigneePort" class="col-md-4">
+                    <h6>Consignee Port
+                                            <span class="label label-default">{{consigneePort}}</span>
+                                        </h6>
+                </div>
+            </div>
+            <div class="row top-buffer">
+
+            
+                <div  *ngIf="shipper"  class="col-md-4">
+                    <h6>Shipper
+                                            <span class="label label-default">{{shipper}}</span>
+                                        </h6>
+                </div>
+                <div  *ngIf="notify" class="col-md-4">
+                    <h6>Notify
+                        <span class="label label-default">{{notify}}</span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        
+        <div class="widget-controls">
+            <a (click)="onMinimizeClicked()" *ngIf="showMaximizeIcon" data-widgster="expand" title="Expand"><i class="glyphicon glyphicon-chevron-up"></i></a>
+            <a (click)="onMinimizeClicked()" *ngIf="showCalapseIcon" data-widgster="collapse" title="Collapse" href="#" style="display: inline;"><i class="glyphicon glyphicon-chevron-down"></i></a>
+        </div>
+    </header>
+
+    <div class="widget-body" *ngIf="showWidgetBody">
+
+        <form>
+
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Bill Of Lading Number</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='billOfLadingNumber'>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Mater Bill Of Lading Number</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='masterBillOfLadingNumber'>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Bill Of Lading Number Import</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='billOfLadingNumberImport'>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Wharf Code</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='warfCode'>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Origin Port</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='originPort'>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Destination</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='destination'>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Loading Port</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='loadingPort'>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Discharge</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='discharge'>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="exampleInputEmail2">Consignee Port</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='consigneePort'>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputEmail2">Shipper</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='shipper'>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputEmail2">Notify</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" [(ngModel)]='notify'>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>
+-->				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				
+
+				<!-- widget div-->
+				<div role="content">
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<form>
+							
+							<fieldset>
+								<input name="authenticity_token" type="hidden">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Bill Of Lading Number</label>
+                                        <input class="form-control" placeholder="Text field" type="text">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Mater Bill Of Lading Number</label>
+                                        <input class="form-control" placeholder="Password" type="password" value="mypassword">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Bill Of Lading Number Import</label>
+                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                
+                                  <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Wharf Code</label>
+                                        <input class="form-control" placeholder="Text field" type="text">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Origin Port</label>
+                                        <input class="form-control" placeholder="Password" type="password" value="mypassword">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Destination</label>
+                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Loading Port</label>
+                                        <input class="form-control" placeholder="Text field" type="text">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Discharge</label>
+                                        <input class="form-control" placeholder="Password" type="password" value="mypassword">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Consignee Port</label>
+                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                
+                                   <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Loading Port</label>
+                                        <input class="form-control" placeholder="Text field" type="text">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Shipper</label>
+                                        <input class="form-control" placeholder="Password" type="password" value="mypassword">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Notify</label>
+                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                
+							
+							</fieldset>
+							
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+

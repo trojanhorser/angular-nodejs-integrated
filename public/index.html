@@ -73,13 +73,16 @@
         System.config({
         packages: {        
           app: {
+			main: '../release/main',
             format: 'register',
             defaultExtension: 'js'
           }
         }
       });
-      System.import('app/main')
-            .then(null, console.error.bind(console));
+    //   System.import('../release/main')
+    //         .then(null, console.error.bind(console));
+	 System.import('app/main')
+             .then(null, console.error.bind(console));
 </script>
 	</head>
 	

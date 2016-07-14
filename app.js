@@ -28,6 +28,7 @@ bookRouter = require('./Routes/bookRoutes')(Book);
 
 app.use('/', express.static(__dirname + '/public'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
+app.use('/release', express.static(__dirname + '/release'));
 
 
 app.use('/api/books', bookRouter); 
